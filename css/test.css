@@ -1,0 +1,151 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('notosanskr/NotoSansKR.css');
+ 
+*{
+    margin:0;
+    padding: 0%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+    
+}
+img{
+    vertical-align: middle;
+    border:0
+}
+
+ul,li{
+    list-style: none;
+}
+
+html{
+    font-size: 10px;
+}
+body{
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+
+/* 공통 클래스 */
+.container {
+    position: relative;
+    display: block;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.wrap{
+    position: relative;
+    display: block;
+}
+
+/* 상단 영역 */
+.header {
+    position: relative;
+    display: block;
+}
+.header-top {
+    position: relative;
+    display: block;
+    background-color: #f3f3f3;
+}
+.header-top > .container {
+    line-height: 29px;
+    background-color: red;
+}
+.header-top-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.header-top-list > li {
+    position: relative;
+    display: block;
+    float: left;
+}
+.header-top-list > li > a {
+    position: relative;
+    display: block;
+    font-size: 11px;
+    color: #9b9b9b;
+    font-family: '돋움', 'Dotum', '굴림', 'Gulim', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    margin: 0 10px;
+    background-color: aqua;
+}
+.header-bottom {
+    position: relative;
+    display: block;
+    background-color: #fff;
+}
+
+/* 비주얼 영역 */
+.visual {
+    position: relative;
+    display: block;
+}
+/* 고객정보 영역 */
+.customer {
+    position: relative;
+    display: block;
+}
+/* 오늘의 상품 영역 */
+.today {
+    position: relative;
+    display: block;
+}
+/* 베스트 상품 영역 */
+.best {
+    position: relative;
+    display: block;
+}
+/* 배너 1 영역 */
+.banner-1 {
+    position: relative;
+    display: block;
+}
+/* FAQ 영역 */
+.faq {
+    position: relative;
+    display: block;
+}
+/* 배너 2 영역 */
+.banner-2 {
+    position: relative;
+    display: block;
+}
+/* 커뮤니티 영역 */
+.community {
+    position: relative;
+    display: block;
+}
+/* 하단 영역 */
+.footer {
+    position: relative;
+    display: block;
+}

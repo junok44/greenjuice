@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>풀무원 녹즙</title>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="js/prefixfree.min.js"></script>
+    <!-- Swiper 슬라이드 -->
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <script src="js/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- 모달창 -->
+    <div class="modal">
+        <div class="modal-cont">
+            <i class="fas fa-exclamation alert"></i>
+            <p class="modal-tit">이 사이트는 스터디용으로 제작되었으며<br>
+                리소스는 원저작자에게 있습니다</p>
+            <p class="modal-txt">본 사이트는 Chrome에 최적화 되어있습니다</p>
+            <button class="modal-close">
+                CLOSE
+            </button>
+        </div>
+    </div>
+    <!-- 위로가기 -->
+    <div class="fix">
+        <div class="container">
+            <a href="#" class="gotop">
+                <i></i>
+                <span>TOP</span>
+            </a>
+        </div>
+    </div>
+    <div class="wrap">
+        <!-- 상단 영역 -->
+        <header class="header">
+            <div class="header-top">
+                <div class="container clearfix">
+                    <ul class="header-top-list left">
+                        <li>
+                            <a href="#">녹즙이야기</a>
+                        </li>
+                        <li>
+                            <a href="#">배달가능지역 검색</a>
+                        </li>
+                    </ul>
+                    <ul class="header-top-list right">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">고객지원</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container clearfix">
+                    <a href="index.html" title="풀무원 녹즙" class="logo">풀무원 녹즙</a>
+                    <nav class="gnb">
+                        <ul class="depth1 clearfix">
+                            <li><a href="#">제품정보</a></li>
+                            <li><a href="#">맞춤제품찾기</a></li>
+                            <li><a href="#">시음신청</a></li>
+                            <li><a href="#">MY녹즙</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="mem-list clearfix">
+                        <li><a href="#" class="ico-search">제품검색</a></li>
+                        <li><a href="#" class="ico-favo">찜하기</a></li>
+                        <li><a href="#" class="ico-bucket">장바구니</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!--// 상단 영역 -->
+        <!-- 비주얼 영역 -->
+        <section class="visual">
+        </section>
+        <!--// 비주얼 영역 -->
+        <!-- 고객정보 영역 -->
+        <section class="customer">
+            <div class="container">
+                <p class="customer-tit">고객님 안녕하세요!</p>
+                <div class="customer-wrap clearfix">
+                    <div class="customer-slide left">
+                    </div>
+                    <div class="customer-login right">
+                        지금 로그인하여 <b>맞춤 제품을</b><br>
+                        <b>추천</b> 받아보세요!
+                        <a href="#" class="login">로그인하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--// 고객정보 영역 -->
+        <!-- 오늘의 상품 영역 -->
+        <section class="today">
+            <div class="container">
+                <h2 class="section-title">오늘은 이런 제품 어떠세요?</h2>
+                <div class="today-good-wrap">
+                    <div class="today-good-box">
+                        <a href="#" class="today-good-link">
+                            <img src="images/today_1.jpg" alt="제품 1">
+                            <span class="today-good-name">프레시업 당근망고지</span>
+                            <span class="today-good-price">4,500원 <em>(190ml)</em></span>
+                        </a>
+                        <span class="good-icon good-icon-new"></span>
+                        <a href="#" class="good-heart"></a>
+                    </div>
+                    <div class="today-good-box">
+                        <a href="#" class="today-good-link">
+                            <img src="images/today_2.jpg" alt="제품 1">
+                            <span class="today-good-name">프레시업 당근망고지</span>
+                            <span class="today-good-price">4,500원 <em>(190ml)</em></span>
+                        </a>
+                        <span class="good-icon good-icon-best"></span>
+                        <a href="#" class="good-heart"></a>
+                    </div>
+                    <div class="today-good-box">
+                        <a href="#" class="today-good-link">
+                            <img src="images/today_3.jpg" alt="제품 1">
+                            <span class="today-good-name">프레시업 당근망고지</span>
+                            <span class="today-good-price">4,500원 <em>(190ml)</em></span>
+                        </a>
+                        <span class="good-icon"></span>
+                        <a href="#" class="good-heart"></a>
+                    </div>
+                    <div class="today-good-box">
+                        <a href="#" class="today-good-link">
+                            <img src="images/today_4.jpg" alt="제품 1">
+                            <span class="today-good-name">프레시업 당근망고지</span>
+                            <span class="today-good-price">4,500원 <em>(190ml)</em></span>
+                        </a>
+                        <span class="good-icon"></span>
+                        <a href="#" class="good-heart"></a>
+                    </div>
+                </div>
+                <div class="today-more">
+                    <a href="#" class="today-more-link">상세하기 추천받기</a>
+                </div>
+            </div>
+        </section>
+        <!--// 오늘의 상품 영역 -->
+        <!-- 베스트 상품 영역 -->
+        <section class="best">
+            <div class="container clearfix">
+                <div class="best-left left">
+                    <h2 class="section-title">베스트 제품</h2>
+                    <div class="best-left-cate">
+                        <span class="best-cate-bg">
+                        </span>
+                        <ul class="best-cate-list">
+                            <li class="best-cate-focus"><a href="#">10대 <i class="best-cate-down"></i></a></li>
+                            <li><a href="#">20대</a></li>
+                            <li><a href="#">30대</a></li>
+                            <li><a href="#">40대</a></li>
+                            <li><a href="#">50대 <i class="best-cate-up"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="best-right right">
+                    <div class="best-up clearfix">
+                        <div class="best-box best-box-2">
+                            <a href="#">
+                                <span class="best-rank-1">
+                                    <em>1</em>위
+                                </span>
+                                <p class="best-rank-1-txt">
+                                    <span>식물성유산균 쌀 <br> 요거트</span>
+                                    <span>2,000원 <em>(130ml)</em></span>
+                                </p>
+                                <p class="best-rank-1-img">
+                                    <img src="images/age20_1.jpg" alt="상품">
+                                </p>
+                            </a>
+                            <a href="#" class="good-heart">
+                            </a>
+                        </div>
+                        <div class="best-box">
+                            <a href="#" class="best-box-link">
+                                <img src="images/age20_2.jpg" alt="상품">
+                                <span class="best-good-name">러브미 케일&셀러리</span>
+                                <span class="best-good-price">1,800원 <em>(130ml)</em></span>
+                            </a>
+                            <span class="best-rank"><em>2</em>위</span>
+                            <a href="#" class="good-heart">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="best-down clearfix">
+                        <div class="best-box">
+                            <a href="#" class="best-box-link">
+                                <img src="images/age20_3.jpg" alt="상품">
+                                <span class="best-good-name">러브미 케일&셀러리</span>
+                                <span class="best-good-price">1,800원 <em>(130ml)</em></span>
+                            </a>
+                            <span class="best-rank"><em>3</em>위</span>
+                            <a href="#" class="good-heart">
+                            </a>
+                        </div>
+                        <div class="best-box">
+                            <a href="#" class="best-box-link">
+                                <img src="images/age20_4.jpg" alt="상품">
+                                <span class="best-good-name">러브미 케일&셀러리</span>
+                                <span class="best-good-price">1,800원 <em>(130ml)</em></span>
+                            </a>
+                            <span class="best-rank"><em>4</em>위</span>
+                            <a href="#" class="good-heart">
+                            </a>
+                        </div>
+                        <div class="best-box">
+                            <a href="#" class="best-box-link">
+                                <img src="images/age20_5.jpg" alt="상품">
+                                <span class="best-good-name">러브미 케일&셀러리</span>
+                                <span class="best-good-price">1,800원 <em>(130ml)</em></span>
+                            </a>
+                            <span class="best-rank"><em>5</em>위</span>
+                            <a href="#" class="good-heart">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--// 베스트 상품 영역 -->
+        <!-- 배너  1 영역 -->
+        <section class="banner-1">
+            <a href="#">
+                <img src="images/banner_1.jpg" alt="배너">
+            </a>
+        </section>
+        <!--// 배너 1 영역 -->
+        <!-- FAQ 영역 -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">
+                    고객님 무엇이 궁금하세요?
+                    <a href="#" class="faq-link">바로가기</a>
+                </h2>
+                <div class="faq-wrap clearfix">
+                    <div class="faq-box">
+                        <a href="#">
+                            <p>
+                                <strong>제품</strong> <br>
+                                어떤 제품이 <br>
+                                저에게 맞을까요?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="faq-box">
+                        <a href="#">
+                            <p>
+                                <strong>제품</strong> <br>
+                                어떤 제품이 <br>
+                                저에게 맞을까요?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="faq-box">
+                        <a href="#">
+                            <p>
+                                <strong>제품</strong> <br>
+                                어떤 제품이 <br>
+                                저에게 맞을까요?
+                            </p>
+                        </a>
+                    </div>
+                    <div class="faq-box">
+                        <a href="#">
+                            <p>
+                                <strong>제품</strong> <br>
+                                어떤 제품이 <br>
+                                저에게 맞을까요?
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--// FAQ 영역 -->
+        <!-- 배너 2 영역 -->
+        <section class="banner-2">
+            <!-- 배너2 슬라이드 -->
+            <div class="swiper-container">
+                <!-- 슬라이드 내용들 -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- 이건 내가 만든다. -->
+                        <div class="banner-slide bg-1">
+                            <a href="#">
+                                <img src="images/banner_21.jpg" alt="제품">
+                            </a>
+                        </div>
+                        <!--// 요기까지  -->
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- 이건 내가 만든다. -->
+                        <div class="banner-slide bg-2">
+                            <a href="#">
+                                <img src="images/banner_22.jpg" alt="제품2">
+                            </a>
+                        </div>
+                        <!--// 요기까지  -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--// 배너 2 영역 -->
+        <!-- 커뮤니티 영역 -->
+        <section class="community">
+            <div class="container clearfix">
+                <div class="notice">
+                    <h3 class="comm-title">
+                        공지사항
+                        <a href="#" class="notice-more">더보기</a>
+                    </h3>
+                    <ul class="notice-list">
+                        <li>
+                            <a href="#">풀무원녹즙 홈페이지 점검 안내</a>
+                            <span class="date">2021.08.27</span>
+                        </li>
+                        <li>
+                            <a href="#">카카오톡 채널 추가하기</a>
+                            <span class="date">2021.06.07</span>
+                        </li>
+                        <li>
+                            <a href="#">내맘대로 주문하기</a>
+                            <span class="date">2021.06.02</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cs">
+                    <h3 class="comm-title">고객 기쁨 센터</h3>
+                    <p class="cs-phone">
+                        080-800-0393
+                        <span>
+                            평일 <em>09:00 ~ 18:00</em>
+                        </span>
+                    </p>
+                </div>
+                <div class="de">
+                    <h3 class="comm-title">배달 가능지역 검색</h3>
+                    <p class="de-txt">
+                        원하시는 풀무원 녹즙 <br>
+                        지점을 바로 찾아보세요!
+                    </p>
+                    <a href="#" class="de-link">
+                        조회하기
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--// 커뮤니티 영역 -->
+        <!-- 하단 영역 -->
+        <footer class="footer">
+            <div class="f-top">
+                <div class="container">
+                    <ul class="f-top-list clearfix">
+                        <li><a href="#">브랜드소개</a></li>
+                        <li><a href="#"><strong>개인정보 처리방침</strong></a></li>
+                        <li><a href="#">사업소개</a></li>
+                        <li><a href="#">이메일무단수집거부</a></li>
+                        <li><a href="#">이용약관</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bottom">
+                <div class="container clearfix">
+                    <span class="f-logo left">
+                        <img src="images/f_logo.png" alt="풀무원 녹즙">
+                    </span>
+                    <div class="f-copy left">
+                        <p class="f-address">
+                            ㈜풀무원녹즙<span class="bar"></span>대표이사 : 김기석<span class="bar"></span>대표전화 : 02-2186-8500<span class="bar"></span>개인정보관리책임자
+                            : 김정만<span class="bar"></span>사업자등록번호 : 301-81-98406 <br>
+                            통신판매번호 : 2016-충북증평-00045 &nbsp;<a href="#"><strong>사업자정보확인</strong></a><span class="bar"></span>주소
+                            : ㈜풀무원녹즙 충청북도 증평군 도안면 원명로 35<span class="bar"></span><b>고객센터</b> : 080-800-0393 (평일
+                            09:00~18:00 토,일, 공휴일 휴무)
+                        </p>
+                        <p class="f-copy-txt">
+                            COPYRIGHT&copy;pulmuonegreenjuice co.,Ltd. ALL RIGHTS RESERVED
+                        </p>
+                    </div>
+                    <div class="f-site right">
+                        <dl class="f-site-list">
+                            <dt>항목1</dt>
+                            <dd><a href="#">풀무원건강생활</a></dd>
+                            <dd><a href="#">풀무원로하스</a></dd>
+                            <dd><a href="#">풀무원베이비밀</a></dd>
+                            <dd><a href="#">풀무원잇슬림</a></dd>
+                            <dd><a href="#">풀무원아미오</a></dd>
+                            <dt>항목1</dt>
+                            <dd><a href="#">풀무원홀딩스</a></dd>
+                            <dd><a href="#">풀무원</a></dd>
+                            <dd><a href="#">뮤지엄김치간</a></dd>
+                            <dt>항목1</dt>
+                            <dd><a href="#">풀무원샘물</a></dd>
+                            <dd><a href="#">올가홀푸드</a></dd>
+                            <dd><a href="#">풀무원푸드앤컬처</a></dd>
+                            <dd><a href="#">풀무원푸드머스</a></dd>
+                            <dd><a href="#">엑소후레쉬</a></dd>
+                        </dl>
+                        <button class="f-site-bt">
+                            풀무원가족사이트
+                            <i></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--// 하단 영역 -->
+    </div>
+</body>
+
+</html>

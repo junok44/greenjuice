@@ -1,0 +1,1384 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('notosanskr/NotoSansKR.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.05rem;
+    background-color: #f3f3f3;
+}
+
+/* 모달창 */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+
+    display: none;
+}
+
+.modal-cont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.alert {
+    position: absolute;
+    left: 50%;
+    top: 2.8rem;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}
+
+.modal-tit {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans KR'sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: -0.028rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.modal-txt {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans KR'sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #666;
+    letter-spacing: -0.028rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.modal-close {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    width: 12rem;
+    height: 3rem;
+    background-color: #000;
+    transform: translate(-50%, -50%);
+    border: none;
+    font-family: 'Noto Sans KR'sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: -0.028rem;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    background-color: #8eb5f0;
+}
+
+/* 공통 클래스 */
+.container {
+    position: relative;
+    display: block;
+    width: 114rem;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.section-title {
+    position: relative;
+    display: block;
+    font-size: 3.2rem;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: -0.25rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* 위로가기  */
+.fix {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    z-index: 9999;
+}
+
+.gotop {
+    position: absolute;
+    right: -7rem;
+    bottom: 30rem;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0 0.8rem rgb(0 0 0 / 10%);
+    border: 0.1rem solid #e4e4e4;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.5s;
+}
+
+.gotop-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gotop i {
+    position: relative;
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.5rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -37.1rem -5rem;
+    margin-top: 0.8rem;
+}
+
+.gotop span {
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.05rem;
+    line-height: 1.4;
+}
+
+.wrap {
+    position: relative;
+    display: block;
+}
+
+/* 상단 영역 */
+.header {
+    position: relative;
+    display: block;
+}
+
+.header-top {
+    position: relative;
+    display: block;
+    background-color: #f3f3f3;
+
+}
+
+.header-top>.container {
+    line-height: 2.9rem;
+}
+
+.header-top-list {
+    position: relative;
+    display: block;
+
+    overflow: hidden;
+}
+
+.header-top-list>li {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.header-top-list>li>a {
+    position: relative;
+    display: block;
+    font-size: 1.1rem;
+    color: #9b9b9b;
+    font-family: '돋움', 'Dotum', '굴림', 'Gulim', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    margin: 0 1rem;
+}
+
+.header-top-list>li:first-child>a {
+    margin-left: 0;
+}
+
+.header-top-list>li:last-child>a {
+    margin-right: 0;
+}
+
+.header-top-list>li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #9b9b9b;
+}
+
+.header-top-list>li:last-child::after {
+    content: none;
+}
+
+.header-bottom {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-top: 0.1rem solid #ddd;
+    border-bottom: 0.1rem solid #ddd;
+    padding-top: 1.8rem;
+    padding-bottom: 1.2rem;
+}
+
+.header-bottom>.container {
+    line-height: 4.7rem;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    float: left;
+    width: 6.5rem;
+    height: 4.7rem;
+    background: url('../images/h_logo.png') no-repeat center;
+
+    text-indent: 1000rem;
+    font-size: 0;
+}
+
+.gnb {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 8rem;
+}
+
+.depth1 {
+    position: relative;
+    display: block;
+}
+
+.depth1>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 6rem;
+}
+
+.depth1>li:last-child {
+    margin-right: 0;
+}
+
+.depth1>li>a {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.depth1>li>a:hover {
+    color: #80b725;
+}
+
+.mem-list {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+}
+
+.mem-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 3rem;
+}
+
+.mem-list>li:last-child {
+    margin-right: 0;
+}
+
+.mem-list>li>a {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+
+    font-size: 0rem;
+    text-indent: -1000rem;
+}
+
+.ico-search {
+    background-position: -1.1rem -1.1rem !important;
+}
+
+.ico-favo {
+    background-position: -5rem -1rem !important;
+}
+
+.ico-bucket {
+    background-position: -9rem -1.1rem !important;
+}
+
+/* 비주얼 영역 */
+.visual {
+    position: relative;
+    display: block;
+    height: 56rem;
+    overflow: hidden;
+    background: url('../images/visual_1.jpg') no-repeat center;
+}
+
+/* 고객정보 영역 */
+.customer {
+    position: relative;
+    display: block;
+}
+
+.customer>.container {
+    background-color: #fff;
+    box-shadow: 0 0.3rem 1.5rem rgb(77 77 77 / 5%);
+    padding: 3rem;
+
+    margin-top: -9rem;
+}
+
+.customer-tit {
+    position: relative;
+    display: block;
+    font-size: 2.6rem;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: -0.15rem;
+    line-height: 1;
+}
+
+.customer-wrap {
+    position: relative;
+    display: block;
+    padding-top: 1.5rem;
+}
+
+.customer-slide {
+    position: relative;
+    display: block;
+    width: 46rem;
+    height: 10rem;
+    overflow: hidden;
+    background-color: #8fcb64;
+}
+
+.customer-login {
+    position: relative;
+    display: block;
+
+    padding-right: 21rem;
+
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.375;
+    letter-spacing: -0.15rem;
+}
+
+.customer-login b {
+    font-weight: 700;
+}
+
+.login {
+    position: absolute;
+    right: 0;
+    bottom: 0.2rem;
+    display: block;
+    padding: 0 4rem;
+    background-color: #47ad1a;
+    line-height: 5rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+}
+
+/* 오늘의 상품 영역 */
+.today {
+    position: relative;
+    display: block;
+    padding: 9rem 0;
+}
+
+.today-good-wrap {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.today-good-box {
+    position: relative;
+    display: block;
+    float: left;
+    width: 27rem;
+    height: 41rem;
+    border: 0.1rem solid #ccc;
+    background-color: #fff;
+    margin-left: 2rem;
+}
+
+.today-good-box:first-child {
+    margin-left: 0;
+}
+
+.today-good-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.today-good-link>img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.today-good-name,
+.best-good-name {
+    position: relative;
+    display: block;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+    line-height: 1.35;
+
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.today-good-price,
+.best-good-price {
+    position: relative;
+    display: block;
+    font-size: 1.7rem;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.05rem;
+    text-align: center;
+}
+
+.today-good-price em,
+.best-good-price em {
+    font-style: normal;
+    color: #999;
+    font-size: 1.5rem;
+}
+
+.good-icon {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    display: none;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 100%;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.05rem;
+}
+
+.good-icon-new {
+    background: #f08b15;
+    display: block;
+}
+
+.good-icon-new::after {
+    content: 'NEW';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.good-icon-best {
+    background: #47ad1a;
+    display: block;
+}
+
+.good-icon-best::after {
+    content: 'BEST';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.good-heart {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: block;
+    width: 2.7rem;
+    height: 2.3rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -25rem -1rem;
+}
+
+.today-more {
+    position: relative;
+    display: block;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.today-more-link {
+    position: relative;
+    display: inline-block;
+    font-size: 2.2rem;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    line-height: 1.4;
+}
+
+.today-more-link::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -67.4rem -8rem;
+
+    vertical-align: -0.7rem;
+    margin-left: 1rem;
+}
+
+/* 베스트 상품 영역 */
+.best {
+    position: relative;
+    display: block;
+    padding: 11rem 0;
+    background-color: #fff;
+}
+
+.best-left {
+    position: relative;
+    display: block;
+    width: 22rem;
+}
+
+.best .section-title {
+    text-align: left;
+    font-weight: 500;
+}
+
+.best-left-cate {
+    position: relative;
+    display: block;
+    margin-top: 2.5rem;
+}
+
+.best-cate-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 5.5rem;
+    background-color: #ef821f;
+    box-shadow: 0.4rem 0 1.5rem rgb(0 0 0 / 10%);
+    transition: top 0.5s;
+}
+
+.best-cate-bg::after {
+    content: '';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 0.7rem;
+    height: 1.3rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -25.1rem -5rem;
+}
+
+.best-cate-list {
+    position: relative;
+    display: block;
+}
+
+.best-cate-list>li {
+    position: relative;
+    display: block;
+}
+
+.best-cate-list>li>a {
+    position: relative;
+    display: block;
+    line-height: 5.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #b5b5b5;
+    letter-spacing: -0.05rem;
+    text-indent: 1.4rem;
+}
+
+.best-cate-focus a {
+    color: #fff !important;
+}
+
+.best-cate-down {
+    position: relative;
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.5rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -17.6rem -5rem;
+    vertical-align: -0.2rem;
+    margin-left: 0.5rem;
+}
+
+.best-cate-up {
+    position: relative;
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.5rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -22.7rem -5rem;
+    vertical-align: -0.2rem;
+    margin-left: 0.5rem;
+}
+
+.best-right {
+    position: relative;
+    display: block;
+    width: 85rem;
+}
+
+.best-box {
+    position: relative;
+    display: block;
+    float: left;
+    width: 27rem;
+    height: 41rem;
+    border: 0.1rem solid #ccc;
+    margin-right: 2rem;
+}
+
+.best-box-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.best-box-link>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.best-rank {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: #999;
+    line-height: 1.4;
+    letter-spacing: -0.05rem;
+    font-weight: 400;
+}
+
+.best-rank em {
+    font-style: normal;
+    font-size: 2.6rem;
+    color: #333;
+    line-height: 2rem;
+}
+
+.best-good-name {
+    padding-top: 26.9rem;
+}
+
+.best-box-2 {
+    width: 56rem;
+}
+
+.best-up {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.best-up .best-box:last-child {
+    margin-right: 0;
+}
+
+.best-down {
+    position: relative;
+    display: block;
+}
+
+.best-down .best-box:last-child {
+    margin-right: 0;
+}
+
+.best-rank-1 {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    display: inline-block;
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 0.1rem solid #429e31;
+    text-align: center;
+    line-height: 6.5rem;
+    font-size: 1.8rem;
+    color: #999;
+    letter-spacing: -0.05rem;
+    font-weight: 400;
+}
+
+.best-rank-1 em {
+    color: #429e31;
+    font-style: normal;
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+.best-rank-1-txt {
+    position: absolute;
+    top: 12rem;
+    left: 4rem;
+    display: block;
+}
+
+.best-rank-1-txt>span {
+    display: block;
+}
+
+.best-rank-1-txt>span:nth-child(1) {
+    font-size: 3.4rem;
+    font-weight: 500;
+    letter-spacing: -0.408rem;
+    line-height: 4.9rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.best-rank-1-txt>span:nth-child(2) {
+    font-size: 2.1rem;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    line-height: 2.94rem;
+}
+
+.best-rank-1-txt>span:nth-child(2) em {
+    font-size: 1.9rem;
+    color: #999;
+    font-style: normal;
+    line-height: 2.66rem;
+}
+
+.best-rank-1-img {
+    position: absolute;
+    top: 7rem;
+    right: 3rem;
+    display: block;
+}
+
+/* 배너  1 영역 */
+.banner-1 {
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: #ac96e9;
+}
+
+/* FAQ 영역 */
+.faq {
+    position: relative;
+    display: block;
+    padding: 10rem 0;
+    background-color: #f4f4f4;
+}
+
+
+.faq .section-title {
+    font-weight: 500;
+}
+
+.faq-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    font-size: 1.5rem;
+    color: #777;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.05rem;
+}
+
+.faq-link::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 0.7rem;
+    height: 1rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -26.8rem -5rem;
+    margin-left: 0.5rem;
+}
+
+.faq-wrap {
+    position: relative;
+    display: block;
+}
+
+.faq-box {
+    position: relative;
+    display: block;
+    float: left;
+    width: 27rem;
+    height: 15rem;
+    background-color: #fff;
+    border: 0.1rem solid rgba(0, 0, 0, 0.07);
+    margin-right: 2rem;
+    padding: 3.5rem 2.5rem;
+}
+
+.faq-box:last-child {
+    margin-right: 0;
+}
+
+.faq-box>a::before {
+    content: '';
+    position: absolute;
+    left: 2.3rem;
+    top: 3.8rem;
+    display: block;
+    width: 5.8rem;
+    height: 5.4rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+}
+
+.faq-box:nth-child(1)>a::before {
+    background-position: -7.9rem -13.6rem;
+}
+
+.faq-box:nth-child(2)>a::before {
+    background-position: -14.9rem -13.7rem;
+}
+
+.faq-box:nth-child(3)>a::before {
+    background-position: -14.9rem -13.7rem;
+}
+
+.faq-box:nth-child(4)>a::before {
+    background-position: -1.1rem -13.6rem;
+}
+
+.faq-box p {
+    position: absolute;
+    left: 9.8rem;
+    top: 3.4rem;
+    display: block;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    line-height: 1.4;
+}
+
+.faq-box strong {
+    color: #429e31;
+    font-weight: 400;
+}
+
+/* 배너 2 영역 */
+.banner-2 {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.banner-slide {
+    position: relative;
+    display: block;
+    text-align: center;
+
+}
+
+.bg-1 {
+    background-color: #eff4fa;
+}
+
+.bg-2 {
+    background-color: #f9f9f9;
+}
+
+
+/* 커뮤니티 영역 */
+.community {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    padding: 4.5rem 0;
+}
+
+.comm-title {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 2.4rem;
+    color: #000;
+    line-height: 1;
+    letter-spacing: -0.1rem;
+    font-weight: 400;
+    padding-bottom: 2.5rem;
+}
+
+.notice {
+    position: relative;
+    display: block;
+    float: left;
+    width: 51rem;
+    margin-right: 6rem;
+}
+
+.notice-more {
+    position: absolute;
+    right: 0;
+    top: 0.9rem;
+
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    color: #777;
+}
+
+.notice-more::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 0.7rem;
+    height: 1rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -26.8rem -5rem;
+    margin-left: 0.7rem;
+    vertical-align: 0.1rem;
+}
+
+.notice-list {
+    position: relative;
+    display: block;
+}
+
+.notice-list>li {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.notice-list>li>a {
+    position: relative;
+    display: block;
+    float: left;
+    width: 43.5rem;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    color: #666;
+}
+
+.date {
+    position: relative;
+    display: block;
+    float: right;
+    width: 7.5rem;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    color: #999;
+}
+
+.cs {
+    position: relative;
+    display: block;
+    float: left;
+    width: 28.5rem;
+}
+
+.cs-phone {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 2.7rem;
+    font-weight: 400;
+    line-height: 3.78rem;
+    letter-spacing: -0.05rem;
+    color: #000;
+    margin-top: 2.6rem;
+}
+
+.cs-phone span {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.96rem;
+    letter-spacing: -0.05rem;
+    color: rgb(153, 153, 153);
+    margin-top: 0;
+}
+
+.cs-phone span em {
+    font-style: normal;
+}
+
+.de {
+    position: relative;
+    display: block;
+    float: right;
+    width: 18rem;
+}
+
+.de-txt {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.05rem;
+    color: #777;
+}
+
+.de-link {
+    position: relative;
+    display: inline-block;
+    border: 0.1rem solid #ccc;
+    font-size: 1.3rem;
+    line-height: 2.8rem;
+    text-align: center;
+    color: #777;
+    margin: 0.5rem 0rem 0rem;
+    padding: 0rem 1rem;
+}
+
+.de-link::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 0.8rem;
+    height: 1rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -28.5rem -5rem;
+    vertical-align: -0.2rem;
+    margin-left: 0.5rem;
+}
+
+/* 하단 영역 */
+.footer {
+    position: relative;
+    display: block;
+}
+
+.f-top {
+    position: relative;
+    display: block;
+    background-color: #f7f7f7;
+}
+
+.f-top-list {
+    position: relative;
+    display: block;
+}
+
+.f-top-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 1.2rem;
+}
+
+.f-top-list>li:first-child {
+    padding-left: 0;
+}
+
+.f-top-list>li:last-child {
+    padding-right: 0;
+}
+
+.f-top-list>li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #777;
+}
+
+.f-top-list>li:last-child::after {
+    content: none;
+}
+
+.f-top-list>li>a {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 4.8rem;
+    color: #777;
+
+}
+
+.f-bottom {
+    position: relative;
+    display: block;
+    padding: 3.5rem 0;
+    background-color: #fff;
+}
+
+.f-logo {
+    position: relative;
+    display: block;
+    margin-right: 3.5rem;
+}
+
+.f-copy {
+    position: relative;
+    display: block;
+    width: 81rem;
+}
+
+.bar {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.7rem;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0.1rem;
+    height: 0.9rem;
+    background-color: #c6c6c6;
+}
+
+.f-address {
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.075rem;
+    color: #7e7e7e;
+    line-height: 1.8;
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+
+.f-address a strong {
+    color: #333;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.f-address b {
+    color: #333;
+    font-weight: 400;
+}
+
+.f-copy-txt {
+    position: relative;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #7e7e7e;
+    letter-spacing: -0.05rem;
+    line-height: 1;
+}
+
+.f-site {
+    position: relative;
+    display: block;
+    width: 16.5rem;
+    height: 3.2rem;
+    z-index: 999;
+}
+
+.f-site-list {
+    position: absolute;
+    left: 0;
+    bottom: 3.2rem;
+    display: none;
+
+    width: 100%;
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 0.1rem solid #c5c5c5;
+    border-radius: 1.3rem;
+}
+
+.f-site-list dt {
+    position: relative;
+    display: block;
+    font-size: 0;
+    border-bottom: 0.1rem dashed #c6c6c6;
+    margin-bottom: 1rem;
+}
+
+.f-site-list dt:first-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.f-site-list dd {
+    position: relative;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.f-site-list dd:last-child {
+    margin-bottom: 0;
+}
+
+.f-site-list dd a {
+    position: relative;
+    display: block;
+    font-size: 1.3rem;
+    color: #777;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.f-site-bt {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 3rem;
+    border: 0.1rem solid #c6c6c6;
+    border-radius: 1.6rem;
+    background-color: #fff;
+    color: #555;
+    font-size: 1.3rem;
+    letter-spacing: -0.025rem;
+    cursor: pointer;
+
+    text-align: left;
+    padding: 0 1.5rem;
+}
+
+.f-site-bt i {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+
+    display: inline-block;
+    width: 1.4rem;
+    height: 0.8rem;
+    background: url('../images/ico_sprite_pc.png') no-repeat;
+    background-position: -36.9rem -29.9rem;
+}
+
+.f-site-bt-active i {
+    transform: translateY(-50%) rotate(0deg) !important;
+}
